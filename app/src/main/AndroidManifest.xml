@@ -3,6 +3,13 @@
 
     <!-- 完全離線：故意不宣告 INTERNET 權限 -->
 
+    <!-- Keep Android 11+ visibility limited to text-to-speech services. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher_legacy"

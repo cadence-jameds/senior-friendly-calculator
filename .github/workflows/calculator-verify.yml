@@ -37,7 +37,11 @@ jobs:
           grep -F "package: name='com.jameds.seniorcalculator.reissued' versionCode='101' versionName='1.0.1'" "$RUNNER_TEMP/calculator-badging.txt"
           grep -Fx "sdkVersion:'23'" "$RUNNER_TEMP/calculator-badging.txt"
           grep -F "name='com.jameds.seniorcalculator.MainActivity'" "$RUNNER_TEMP/calculator-badging.txt"
-          if "$aik/aapt" dump permissions "$apk" | grep -F 'android.permission.INTERNET'; then exit 1; fi
+          "$aik/aapt" dump xmltree "$apk" AndroidManifest.xml > "$RUNNER_TEMP/calculator-manifest.txt"
+          grep -F 'E: queries ' "$RUNNER_TEMP/calculator-manifest.txt"
+          grep -F '"android.intent.action.TTS_SERVICE"' "$RUNNER_TEMP/calculator-manifest.txt"
+          "$aik/aapt" dump permissions "$apk" > "$RUNNER_TEMP/calculator-permissions.txt"
+          if grep -E 'android\.permission\.(INTERNET|QUERY_ALL_PACKAGES)' "$RUNNER_TEMP/calculator-permissions.txt"; then exit 1; fi
           if "$aik/apksigner" verify "$apk" >/dev/null 2>&1; then echo 'Unexpected signed APK'; exit 1; fi
           sha256sum "$apk"
       - name: Retain checked unsigned APK for local signing
