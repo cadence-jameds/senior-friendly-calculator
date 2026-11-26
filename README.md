@@ -24,7 +24,12 @@
 
 ## 下載安裝
 
-**v1.0.0 已停止提供安裝。** 請暫勿安裝或轉傳舊版安裝檔，等待新版公告。
+**最新版：v1.0.1**
+
+- [直接下載 Android APK](https://github.com/cadence-jameds/senior-friendly-calculator/releases/download/v1.0.1/Senior-Calculator-v1.0.1.apk)
+- [發行說明與 SHA-256 校驗值](https://github.com/cadence-jameds/senior-friendly-calculator/releases/tag/v1.0.1)
+
+v1.0.1 使用新的 App 識別碼與簽章，會和 v1.0.0 分開安裝，不會覆蓋舊版。**v1.0.0 已停止提供，請勿安裝或轉傳舊版檔案。**
 
 ## 技術資訊
 
