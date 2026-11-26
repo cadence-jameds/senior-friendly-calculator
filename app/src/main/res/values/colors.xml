@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="screen_bg">#101318</color>
+    <color name="display_bg">#191E26</color>
+    <color name="display_text">#FFFFFF</color>
+    <color name="number_bg">#2B313B</color>
+    <color name="number_text">#FFFFFF</color>
+    <color name="function_bg">#3A6D91</color>
+    <color name="function_text">#FFFFFF</color>
+
+    <color name="divide_bg">#C46A00</color>
+    <color name="multiply_bg">#A94A16</color>
+    <color name="subtract_bg">#9A3F69</color>
+    <color name="add_bg">#286A9A</color>
+    <color name="operator_text">#FFFFFF</color>
+
+    <color name="equals_bg">#167A3E</color>
+    <color name="equals_text">#FFFFFF</color>
+    <color name="danger_bg">#B43A32</color>
+    <color name="danger_text">#FFFFFF</color>
+</resources>
