@@ -40,3 +40,11 @@ jobs:
           if "$aik/aapt" dump permissions "$apk" | grep -F 'android.permission.INTERNET'; then exit 1; fi
           if "$aik/apksigner" verify "$apk" >/dev/null 2>&1; then echo 'Unexpected signed APK'; exit 1; fi
           sha256sum "$apk"
+      - name: Retain checked unsigned APK for local signing
+        if: github.event_name == 'push' && github.repository == 'cadence-jameds/senior-friendly-calculator' && github.ref == 'refs/heads/remediation/calculator-clean-v1.0.1'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: Senior-Calculator-v1.0.1-UNSIGNED
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
+          if-no-files-found: error
+          retention-days: 7
