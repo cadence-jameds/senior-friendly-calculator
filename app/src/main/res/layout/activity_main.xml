@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/screen_bg"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/displayPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="36"
+        android:orientation="vertical"
+        android:background="@color/display_bg"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:id="@+id/expressionDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="30"
+            android:text=""
+            android:textColor="#C8CDD5"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:ellipsize="start"
+            android:contentDescription="計算式" />
+
+        <TextView
+            android:id="@+id/resultDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="70"
+            android:text="0"
+            android:textColor="@color/display_text"
+            android:textStyle="bold"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:ellipsize="start"
+            android:contentDescription="目前數字或答案" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keypadPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="64"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+            <Button android:id="@+id/btnAc" style="@style/FlexDangerButton" android:text="AC" />
+            <Button android:id="@+id/btnBack" style="@style/FlexFunctionButton" android:text="⌫" />
+            <Button android:id="@+id/btnVoice" style="@style/FlexFunctionButton" android:text="語音 開" />
+            <Button android:id="@+id/btnDivide" style="@style/FlexDivideButton" android:text="÷" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+            <Button android:id="@+id/btn7" style="@style/FlexNumberButton" android:text="7" />
+            <Button android:id="@+id/btn8" style="@style/FlexNumberButton" android:text="8" />
+            <Button android:id="@+id/btn9" style="@style/FlexNumberButton" android:text="9" />
+            <Button android:id="@+id/btnMultiply" style="@style/FlexMultiplyButton" android:text="×" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+            <Button android:id="@+id/btn4" style="@style/FlexNumberButton" android:text="4" />
+            <Button android:id="@+id/btn5" style="@style/FlexNumberButton" android:text="5" />
+            <Button android:id="@+id/btn6" style="@style/FlexNumberButton" android:text="6" />
+            <Button android:id="@+id/btnSubtract" style="@style/FlexSubtractButton" android:text="−" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+            <Button android:id="@+id/btn1" style="@style/FlexNumberButton" android:text="1" />
+            <Button android:id="@+id/btn2" style="@style/FlexNumberButton" android:text="2" />
+            <Button android:id="@+id/btn3" style="@style/FlexNumberButton" android:text="3" />
+            <Button android:id="@+id/btnAdd" style="@style/FlexAddButton" android:text="+" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+            <Button android:id="@+id/btn0" style="@style/FlexNumberButton" android:layout_weight="2" android:text="0" />
+            <Button android:id="@+id/btnDot" style="@style/FlexNumberButton" android:text="." />
+            <Button android:id="@+id/btnEquals" style="@style/FlexEqualsButton" android:text="=" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
